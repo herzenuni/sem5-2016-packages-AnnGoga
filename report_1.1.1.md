@@ -28,7 +28,7 @@
 
 Остальные аргументы аналогичны аргументам в load().   
   
-`#Кодирование основных объектов Python:`  
+```#Кодирование основных объектов Python:`  
 `import json  `  
 `json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}])  `  
 `'["foo", {"bar": ["baz", null, 1.0, 2]}]'  `  
@@ -59,4 +59,4 @@
 `json.loads('["foo", {"bar":["baz", null, 1.0, 2]}]') `   
 `['foo', {'bar': ['baz', None, 1.0, 2]}] `   
 `json.loads('"\\"foo\\bar"') `   
-`'"foo\x08ar'`     
+`'"foo\x08ar'```     
