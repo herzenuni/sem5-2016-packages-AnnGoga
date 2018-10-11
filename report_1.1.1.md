@@ -1,6 +1,6 @@
-#Инвариантные задания  
-##Модуль json  
-JSON (JavaScript Object Notation) - простой формат обмена данными, основанный на подмножестве синтаксиса JavaScript. Модуль json позволяет кодировать и декодировать данные в удобном формате.    
+# Инвариантные задания  
+## Модуль json  
+**JSON (JavaScript Object Notation)** - простой формат обмена данными, основанный на подмножестве синтаксиса JavaScript. Модуль json позволяет кодировать и декодировать данные в удобном формате.    
 **json.dump**(obj, fp, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw) - сериализует obj как форматированный JSON поток в fp.  
 
 Если **skipkeys** = True, то ключи словаря не базового типа (str, unicode, int, long, float, bool, None) будут проигнорированы, вместо того, чтобы вызывать исключение **TypeError**.    
