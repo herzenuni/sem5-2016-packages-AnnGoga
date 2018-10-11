@@ -26,4 +26,36 @@
 Если не удастся десериализовать JSON, будет возбуждено исключение ValueError.  
 **json.loads**(s, encoding=None, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw) - десериализует s (экземпляр str, содержащий документ JSON) в объект Python.  
 
-Остальные аргументы аналогичны аргументам в load().  
+Остальные аргументы аналогичны аргументам в load().    
+`#Кодирование основных объектов Python:  
+>>> import json  
+>>> json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}])  
+'["foo", {"bar": ["baz", null, 1.0, 2]}]'  
+>>> print(json.dumps("\"foo\bar"))  
+"\"foo\bar"  
+>>> print(json.dumps('\u1234'))  
+"\u1234"  
+>>> print(json.dumps('\\'))  
+"\\"  
+>>> print(json.dumps({"c": 0, "b": 0, "a": 0}, sort_keys=True))  
+{"a": 0, "b": 0, "c": 0}
+
+#Компактное кодирование:
+>>> import json
+>>> json.dumps([1,2,3,{'4': 5, '6': 7}], separators=(',', ':'))
+'[1,2,3,{"4":5,"6":7}]'
+
+#Красивый вывод:
+>>> import json
+>>> print(json.dumps({'4': 5, '6': 7}, sort_keys=True, indent=4))
+{
+    "4": 5,
+    "6": 7
+}
+
+#Декодирование (парсинг) JSON:
+>>> import json
+>>> json.loads('["foo", {"bar":["baz", null, 1.0, 2]}]')
+['foo', {'bar': ['baz', None, 1.0, 2]}]
+>>> json.loads('"\\"foo\\bar"')
+'"foo\x08ar'` 
